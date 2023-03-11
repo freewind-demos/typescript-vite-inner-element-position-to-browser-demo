@@ -9,22 +9,6 @@ function f(element: Element, targetWin: Window, store: Position) {
     const style = win.getComputedStyle(element);
     const rect = element.getBoundingClientRect();
 
-    console.log("### f", JSON.stringify({
-        store,
-        rect: {
-            top: rect.top,
-            left: rect.left,
-        },
-        style: {
-            marginTop: style.marginTop,
-            borderTopWidth: style.borderTopWidth,
-            paddingTop: style.paddingTop,
-            marginLeft: style.marginLeft,
-            borderLeftWidth: style.borderLeftWidth,
-            paddingLeft: style.paddingLeft,
-        }
-    }, null, 4));
-
     if (store.left !== undefined) {
         store.left += rect.left + parseInt(style.borderLeftWidth) + parseInt(style.paddingLeft);
     } else {
